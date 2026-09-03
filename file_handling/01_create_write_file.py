@@ -1,0 +1,6 @@
+file = open("student.txt","w")
+file.write("name: Nisarg Gopohane\n")
+file.write("roll no: 70\n")
+file.write("Dept: CSE\n")
+file.write("semester: 5\n")
+file.close()
