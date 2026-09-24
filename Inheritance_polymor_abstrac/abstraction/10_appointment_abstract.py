@@ -1,0 +1,42 @@
+# 10. Abstract class Appointment with book_appointment() and calculate_fee()
+
+from abc import ABC, abstractmethod
+
+class Appointment(ABC):
+    @abstractmethod
+    def book_appointment(self):
+        pass
+
+    @abstractmethod
+    def calculate_fee(self):
+        pass
+
+
+class GeneralAppointment(Appointment):
+    def book_appointment(self):
+        print("General appointment booked")
+
+    def calculate_fee(self):
+        return 300
+
+
+class SpecialistAppointment(Appointment):
+    def book_appointment(self):
+        print("Specialist appointment booked")
+
+    def calculate_fee(self):
+        return 800
+
+
+class EmergencyAppointment(Appointment):
+    def book_appointment(self):
+        print("Emergency appointment booked")
+
+    def calculate_fee(self):
+        return 1500
+
+
+appointments = [GeneralAppointment(), SpecialistAppointment(), EmergencyAppointment()]
+for a in appointments:
+    a.book_appointment()
+    print("Fee:", a.calculate_fee())
